@@ -61,7 +61,7 @@
             /* definiré un tamaño del título de primer nivel (h1) que se ajuste según el viewport width --> https://www.yunbitsoftware.com/blog/2017/06/22/viewport-units-css-que-es/ */
 
             h1 {
-                font-size: calc(2rem + 3vw);
+                font-size: calc(1rem + 3vw);
             }
 
             /* repetiré el truco anterior con el título de segundo nivel (h2), que, a diferencia del anterior, puedo ocupar varias veces en la misma página */
@@ -97,28 +97,43 @@
             #homero {
                 animation: corre 5s infinite;
             }
+
+            /* con esto se puede replicar lo de Juan Pablo */
+
+            header{
+                background:linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), url(cositas/bosque_borneo.jpeg);
+                background-size: cover;
+                background-position: center -250px;
+                background-repeat: no-repeat;
+            }            
         </style>
 
         <!--ESTO SERVIRÁ PARA COMPARAR UN ANTES Y UN DESPUÉS-->
         <link href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css" rel="stylesheet" />
 
-        <title>REPASO DANDO UN PASO</title>
+        <title>EL OSO MAS PEQUEÑO DEL MUNDO</title>
     </head>
     <body>
         <!--ESTE ES EL ENCABEZADO-->
-        <header class="container">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-11 col-lg-10 col-xl-9 mx-auto">
+                        <img src="cositas/Orangutan_002.png" class="w-100" />
+                    </div>
+                </div>
+            </div>
+            <div class="container bg-white">
             <div class="row">
                 <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
-                    <h2 class="text-center fst-italic mt-5"><span class="px-2 py-1">Nombre científico</span></h2>
+                    <h2 class="text-center fst-italic mt-5"><span class="px-2 py-1">Helarctos Malayanus</span></h2>
 
-                    <h1 class="text-center py-3">Nombre común</h1>
-
-                    <p class="lead">En este párrafo, de clase lead, capturamos la atención y nos comprometemos con algo que debe mostrarse antes de cerrar el encabezado (el elemento header). Es recomendable que sea como un tweet (un máximo de 280 caracteres; como referencia, en este párrafo tenemos 280 caracteres).</p>
-
-                    <p>Pero no podemos dejar que todo se acabe en el encabezado. Corresponde ofrecer, en este párrafo desclasado, razones para bajar por distintas secciones (section), llegando al pie de página (footer). Nuevamente, que sea como un tweet (aquí también pueden contar sólo 280 caracteres).</p>
+                    <h1 class="text-center py-3">Oso Malayo</h1>
+                    
+                    <p class="lead">En este párrafo, de clase lead, tenemos que ser capaces de conectar lo que se ve arriba (el animal en su hábitat) y lo que se ve abajo (la gráfica del estado de conservación). Es recomendable que sea corto como un tweet (máximo de 280 caracteres, como los caracteres del párrafo).</p>
 
                     <div class="row">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-6 my-3 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-6 my-5 mx-auto">
                             <style type="text/css">
                                 line,
                                 path {
@@ -150,7 +165,7 @@
                                 <text transform="matrix(1 0 0 1 180 245)" class="blanco">EW</text>
                             </g>
                             <g id="cr">
-                                <circle class="si" cx="342.9" cy="228.7" r="46.4" />
+                                <circle class="no" cx="342.9" cy="228.7" r="46.4" />
                                 <text transform="matrix(1 0 0 1 313 245)" class="blanco">CR</text>
                             </g>
                             <g id="en">
@@ -158,7 +173,7 @@
                                 <text transform="matrix(1 0 0 1 444 245)" class="blanco">EN</text>
                             </g>
                             <g id="vu">
-                                <circle class="no" cx="603.8" cy="228.7" r="46.4" />
+                                <circle class="si" cx="603.8" cy="228.7" r="46.4" />
                                 <text transform="matrix(1 0 0 1 574 245)" class="blanco">VU</text>
                             </g>
                             <g id="nt">
@@ -183,11 +198,6 @@
                             </g>
                         </svg>
                     </div>
-
-                    <!--Muestra el chucao chico o el grando, pero carga ambos-->
-                    <object data="cositas/chucao-chico.svg" type="image/svg+xml" class="d-md-none"></object>
-                    <object data="cositas/chucao-grande.svg" type="image/svg+xml" class="d-none d-md-block"></object>
-                    <!--Se muestra o no por una clase de Bootstrap que responde al ancho de pantalla-->
                 </div>
             </div>
         </header>
@@ -198,9 +208,8 @@
                 <div class="container-fluid g-0">
                     <div class="row g-0">
                         <div class="col-12">
-                            <h3 class="text-center my-3">Sección Ancha</h3>
                             <!--VAMOS A INCLUIR TRES SVG EN UN CARRUSEL-->
-                            <div id="carruselConMapa" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                            <div id="carruselConMapa" class="carousel slide carousel-fade" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carruselConMapa" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carruselConMapa" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -208,21 +217,21 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="1000">
-                                        <object class="d-block w-100" data="cositas/mapa-1.svg" type="image/svg+xml"></object>
+                                        <object class="d-block w-100" data="cositas/paso-1.svg" type="image/svg+xml"></object>
                                         <div class="carousel-caption">
-                                            <h5>1950</h5>
+                                            <small>A medida que se mueven su peso deforma las ramas hacia abajo.</small>
                                         </div>
                                     </div>
                                     <div class="carousel-item" data-bs-interval="1000">
-                                        <object class="d-block w-100" data="cositas/mapa-2.svg" type="image/svg+xml"></object>
+                                        <object class="d-block w-100" data="cositas/paso-2.svg" type="image/svg+xml"></object>
                                         <div class="carousel-caption">
-                                            <h5>1970</h5>
+                                            <small>Se ayudan con sus pies prensiles para sostener ramas cercanas y propulsarse</small>
                                         </div>
                                     </div>
                                     <div class="carousel-item" data-bs-interval="1000">
-                                        <object class="d-block w-100" data="cositas/mapa-3.svg" type="image/svg+xml"></object>
+                                        <object class="d-block w-100" data="cositas/paso-3.svg" type="image/svg+xml"></object>
                                         <div class="carousel-caption">
-                                            <h5>2000</h5>
+                                            <small>Distribuyen su peso para formar puentes a los árboles adyacentes</small>
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +242,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto my-5">
-                            <p>Este es un lorem ipsum dolor sit amet, consectetur adipiscing elit. Pero no es un loren ipsum para papel, es para pantalla, donde <a href="https://www.nngroup.com/articles/how-users-read-on-the-web/" target="_blank" title="How Users Read on the Web">es recomendable</a> <em>destacar palabras clave</em>, ofrecer <a href="https://www.nngroup.com/videos/plain-language-for-experts/" target="_blank" title="Plain Language For Everyone, Even Experts">una idea por párrafo</a> (que sea clara para <a href="https://www.nngroup.com/videos/biggest-mistake-writing-web/" target="_blank" title="The Biggest Mistake in Writing for the Web">tu público objetivo</a>) y usar el estilo de pirámide invertida (incluyendo en cada pirámide lo que se acaba de <a href="https://youtu.be/iEB3oILm-qQ?t=2063" target="_blank" title="Charla del Dr. Mario García">mostrar o se mostrará</a> a continuación).</p>
+                            <p>Pero no podemos dejar que todo se acabe en el encabezado. Corresponde ofrecer, en este párrafo desclasado, razones para bajar por distintas secciones (section), llegando al pie de página (footer). Nuevamente, que sea como un tweet (aquí también pueden contar sólo 280 caracteres).</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +341,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col py-3">
-                        <p class="text-center small">Revisa <a href="otro-formato.html" class="link-light">el otro formato</a></p>
+                        <p class="text-center small">Revisa <a href="index.html" class="link-light">el formato</a></p>
                     </div>
                 </div>
             </div>
